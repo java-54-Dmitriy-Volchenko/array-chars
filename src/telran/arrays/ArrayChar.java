@@ -5,10 +5,10 @@ public class ArrayChar {
    
    
    public ArrayChar(char[] array) {
-	  // super();
+	  super();
 	  this.array = array;
    }
-   public int myCompareTo(ArrayChar another) {//I changed name of method(s) to avoid matching with native methods of class String 
+   public int myCompareTo(ArrayChar another) {//I changed names of method(s) to avoid matching with native methods of class String 
 	   int length = Math.min(this.array.length, another.array.length);
 	   int index=0;
 	  while(index<length &&this.array[index]==another.array[index]) {
@@ -36,7 +36,7 @@ public class ArrayChar {
    			int occurence = 0;
    			for(int i=0; i<array.length; i++) {
    				if (array[i]==character)occurence++;
-   				// array[i]==character?occurence++:occurence;
+   				
    			}
    				return occurence;
 }
@@ -77,7 +77,6 @@ public class ArrayChar {
 			}
 			else return false;
 }
-
 
    		
 }

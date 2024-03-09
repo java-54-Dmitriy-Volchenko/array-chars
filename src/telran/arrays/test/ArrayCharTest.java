@@ -121,4 +121,15 @@ class ArrayCharTest {
 		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar3));
 		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar4));
 	}
+//	//The last task to find the bug in code and show this in unit test - i think it is possibility to 
+	//add to instance of class object null value. This possibility is because of no setters and getters in 
+	// our Class so no rules for value assignment. But i don't understand how to show it in tests.
+	// The only variant is below
+//	@Test
+//	void myCheckToNullTest() {
+//		   char[] array=null ;
+//	        ArrayChar charArray1 = new ArrayChar(array);
+//	        assertTrue (charArray1.myContains('a'));
+//	        
+//	}
 }
