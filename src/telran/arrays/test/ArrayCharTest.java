@@ -76,6 +76,14 @@ class ArrayCharTest {
 		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
 		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
 		assertTrue (arrayChar4.myCompareToIgnoreCase(arrayChar5)==0);
-;	}
+	}
+	
+	@Test
+	void myContainsTest() {
+		char[] ar1 = {'a', '3', '@', '.', ' ', 'k',' ', ' ', 'ך'};
+		ArrayChar arrayChar1 = new ArrayChar(ar1);
+		assertTrue (arrayChar1.myContains('@'));
+		assertFalse (arrayChar1.myContains('>'));
+	}
 	}
 	

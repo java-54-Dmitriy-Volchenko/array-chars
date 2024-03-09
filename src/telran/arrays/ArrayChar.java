@@ -38,14 +38,22 @@ public class ArrayChar {
    				return occurence;
 }
    		
-   	  public int myCompareToIgnoreCase(ArrayChar another) { 
-   	   int length = Math.min(this.array.length, another.array.length);
-   	   int index=0;
+   		public int myCompareToIgnoreCase(ArrayChar another) { 
+   				int length = Math.min(this.array.length, another.array.length);
+   					int index=0;
    	   
-   	  while(index<length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
-   		  index++;
+   						while(index<length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
+   						index++;
    	  }
-   	   return index==length?this.array.length - another.array.length:this.array[index]-another.array[index];
+   				return index==length?this.array.length - another.array.length:this.array[index]-another.array[index];
       }
+   	  
+   		public boolean myContains(char character) {      	 
+   				int index=0;     	   
+   				while(index<this.array.length && this.array[index]!= character) {
+   				index++;
+     	  }
+   				return index==this.array.length?false:true;
+        }
 }  
 
