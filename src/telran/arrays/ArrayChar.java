@@ -55,5 +55,16 @@ public class ArrayChar {
      	  }
    				return index==this.array.length?false:true;
         }
+   		
+   		public boolean myEquals(ArrayChar another) {      	 
+				if(this.array.length==another.array.length) {
+					int index=0;
+					while(index<this.array.length && this.array[index]== another.array[index]) {
+						index++;
+					}
+					return index==this.array.length?true:false;
+				}
+				else return false;
+    }
 }  
 
