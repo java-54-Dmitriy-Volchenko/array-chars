@@ -103,5 +103,22 @@ class ArrayCharTest {
 		assertFalse(arrayChar1.myEquals(arrayChar3));
 		assertFalse(arrayChar1.myEquals(arrayChar4));
 	}
-	
+	@Test
+	void myEqualsIgnoreCaseTest() {
+		char[] ar1 = {'a', '3', '@', '.'};
+		char[] ar2 = {'a', '3', '@'};
+		char[] ar3 = {'a', '3', '@', '.', ' '};
+		char[] ar4 = {'a', '2', '@', '.', ' '};
+		char[] ar5 = {'A', '3', '@', '.'};
+		
+		ArrayChar arrayChar1=new ArrayChar(ar1);
+		ArrayChar arrayChar2=new ArrayChar(ar2);
+		ArrayChar arrayChar3=new ArrayChar(ar3);
+		ArrayChar arrayChar4=new ArrayChar(ar4);
+		ArrayChar arrayChar5=new ArrayChar(ar5);
+		assertTrue (arrayChar1.myEqualsIgnoreCase(arrayChar5));
+		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar2));
+		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar3));
+		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar4));
+	}
 }

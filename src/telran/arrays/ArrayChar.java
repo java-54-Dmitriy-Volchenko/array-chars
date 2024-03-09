@@ -66,5 +66,16 @@ public class ArrayChar {
 				}
 				else return false;
     }
+   		
+   		public boolean myEqualsIgnoreCase(ArrayChar another) {      	 
+			if(this.array.length==another.array.length) {
+				int index=0;
+				while(index<this.array.length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
+					index++;
+				}
+				return index==this.array.length?true:false;
+			}
+			else return false;
+}
 }  
 
