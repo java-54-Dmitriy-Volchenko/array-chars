@@ -50,5 +50,32 @@ class ArrayCharTest {
 		
 		
 	}
+	
+	
+	@Test
+	void myCompareToIgnoreCaseTest() {
+		char[] ar1 = {'1', '2', '3'};
+		char[] ar2 = {'9'};
+		char[] ar3 = {'1', '2', '3'};
+		char[] ar4 = {'h', 'e', 'l', 'l', 'o'};
+		char[] ar5 = {'H', 'e', 'l', 'l', 'o'};
+		char[] ar6 = {'a'};
+		char[] ar7 = {'a', 'A'};
+				
+		ArrayChar arrayChar1 = new ArrayChar(ar1);
+		ArrayChar arrayChar2 = new ArrayChar(ar2);
+		ArrayChar arrayChar3 = new ArrayChar(ar3);
+		ArrayChar arrayChar4 = new ArrayChar(ar4);
+		ArrayChar arrayChar5 = new ArrayChar(ar5);
+		ArrayChar arrayChar6 = new ArrayChar(ar6);
+		ArrayChar arrayChar7 = new ArrayChar(ar7);
+		assertEquals(8, arrayChar2.myCompareToIgnoreCase(arrayChar1));
+		assertEquals(-8, arrayChar1.myCompareToIgnoreCase(arrayChar2));
+		assertEquals(1, arrayChar7.myCompareToIgnoreCase(arrayChar6));
+		assertEquals(-1, arrayChar6.myCompareToIgnoreCase(arrayChar7));
+		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
+		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
+		assertTrue (arrayChar4.myCompareToIgnoreCase(arrayChar5)==0);
+;	}
 	}
 	
