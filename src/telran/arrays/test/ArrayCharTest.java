@@ -61,6 +61,8 @@ class ArrayCharTest {
 		char[] ar5 = {'H', 'e', 'l', 'l', 'o'};
 		char[] ar6 = {'a'};
 		char[] ar7 = {'a', 'A'};
+		char[] ar8= {'L'};
+		char[] ar9 = {'a'};
 				
 		ArrayChar arrayChar1 = new ArrayChar(ar1);
 		ArrayChar arrayChar2 = new ArrayChar(ar2);
@@ -69,6 +71,8 @@ class ArrayCharTest {
 		ArrayChar arrayChar5 = new ArrayChar(ar5);
 		ArrayChar arrayChar6 = new ArrayChar(ar6);
 		ArrayChar arrayChar7 = new ArrayChar(ar7);
+		ArrayChar arrayChar8 = new ArrayChar(ar8);
+		ArrayChar arrayChar9 = new ArrayChar(ar9);
 		assertEquals(8, arrayChar2.myCompareToIgnoreCase(arrayChar1));
 		assertEquals(-8, arrayChar1.myCompareToIgnoreCase(arrayChar2));
 		assertEquals(1, arrayChar7.myCompareToIgnoreCase(arrayChar6));
@@ -76,6 +80,7 @@ class ArrayCharTest {
 		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
 		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
 		assertTrue (arrayChar4.myCompareToIgnoreCase(arrayChar5)==0);
+		assertTrue(arrayChar8.myCompareToIgnoreCase(arrayChar9) > 0); 
 	}
 	
 	@Test

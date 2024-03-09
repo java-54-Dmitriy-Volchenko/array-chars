@@ -48,7 +48,7 @@ public class ArrayChar {
    						while(index<length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
    						index++;
    	  }
-   				return index==length?this.array.length - another.array.length:this.array[index]-another.array[index];
+   				return index==length?this.array.length - another.array.length:Character.toLowerCase(this.array[index])-Character.toLowerCase(another.array[index]);
       }
    	  
    		public boolean myContains(char character) {      	 
