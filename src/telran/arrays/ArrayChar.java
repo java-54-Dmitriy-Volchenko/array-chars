@@ -2,7 +2,10 @@ package telran.arrays;
 
 public class ArrayChar {
    private char[] array;
+   
+   
    public ArrayChar(char[] array) {
+	  // super();
 	  this.array = array;
    }
    public int myCompareTo(ArrayChar another) {//I changed name of method(s) to avoid matching with native methods of class String 
@@ -49,11 +52,8 @@ public class ArrayChar {
       }
    	  
    		public boolean myContains(char character) {      	 
-   				int index=0;     	   
-   				while(index<this.array.length && this.array[index]!= character) {
-   				index++;
-     	  }
-   				return index==this.array.length?false:true;
+   				
+   				return myIndexOf(character)==-1?false:true;
         }
    		
    		public boolean myEquals(ArrayChar another) {      	 
@@ -77,5 +77,8 @@ public class ArrayChar {
 			}
 			else return false;
 }
-}  
+
+
+   		
+}
 
