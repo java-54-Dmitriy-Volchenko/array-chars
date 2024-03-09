@@ -38,6 +38,17 @@ class ArrayCharTest {
 		assertEquals(3, arrayChar1.myLastIndexOf('2'));
 		assertEquals (-1, arrayChar1.myLastIndexOf('9'));
 }
+	@Test
+	void myCountCharTest() {
+		char[] ar1 = {'1', '2', '3', '2'};
+		char[] ar2 = {'a', '3', '@', '.', ' ', 'k',' ', ' ', 'ך'};
+		ArrayChar arrayChar1=new ArrayChar(ar1);
+		ArrayChar arrayChar2=new ArrayChar(ar2);
+		assertEquals(2, arrayChar1.myCountChar('2'));
+		assertEquals(0, arrayChar1.myCountChar('a'));
+		assertEquals(3, arrayChar2.myCountChar(' '));
+		
+		
+	}
+	}
 	
-	
-}

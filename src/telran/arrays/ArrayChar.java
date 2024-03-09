@@ -28,6 +28,14 @@ public class ArrayChar {
 	   }
 		   return index;
    }
-}
    
+   		public int myCountChar(char character) {
+   			int occurence = 0;
+   			for(int i=0; i<array.length; i++) {
+   				if (array[i]==character)occurence++;
+   				// array[i]==character?occurence++:occurence;
+   			}
+   				return occurence;
+}
+}  
 
