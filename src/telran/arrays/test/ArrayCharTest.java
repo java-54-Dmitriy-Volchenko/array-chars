@@ -47,6 +47,7 @@ class ArrayCharTest {
 		assertEquals(2, arrayChar1.countChar('2'));
 		assertEquals(0, arrayChar1.countChar('a'));
 		assertEquals(3, arrayChar2.countChar(' '));
+		assertEquals(0, new ArrayChar(new char[] {}).countChar('Q'));
 		
 		
 	}
@@ -107,6 +108,8 @@ class ArrayCharTest {
 		assertFalse(arrayChar1.equals(arrayChar2));
 		assertFalse(arrayChar1.equals(arrayChar3));
 		assertFalse(arrayChar1.equals(arrayChar4));
+		assertFalse(new ArrayChar(new char[] {'a', 'B', 'c'})
+				.equals(new ArrayChar(new char[] {})));
 	}
 	@Test
 	void equalsIgnoreCaseTest() {
@@ -125,6 +128,8 @@ class ArrayCharTest {
 		assertFalse(arrayChar1.equalsIgnoreCase(arrayChar2));
 		assertFalse(arrayChar1.equalsIgnoreCase(arrayChar3));
 		assertFalse(arrayChar1.equalsIgnoreCase(arrayChar4));
+		assertFalse(new ArrayChar(new char[] {'a', 'B', 'c'})
+				.equalsIgnoreCase(new ArrayChar(new char[] {})));
 	}
 //	//The last task to find the bug in code and show this in unit test - i think it is possibility to 
 	//add to instance of class object null value. This possibility is because of no setters and getters in 
