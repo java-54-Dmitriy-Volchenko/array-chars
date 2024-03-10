@@ -8,7 +8,7 @@ public class ArrayChar {
 	  super();
 	  this.array = array;
    }
-   public int myCompareTo(ArrayChar another) {//I changed names of method(s) to avoid matching with native methods of class String 
+   public int compareTo(ArrayChar another) {//I changed names of method(s) to avoid matching with native methods of class String 
 	   int length = Math.min(this.array.length, another.array.length);
 	   int index=0;
 	  while(index<length &&this.array[index]==another.array[index]) {
@@ -16,7 +16,7 @@ public class ArrayChar {
 	  }
 	   return index==length?this.array.length - another.array.length:this.array[index]-another.array[index];
    }
-   public int myIndexOf(char character) {
+   public int indexOf(char character) {
 	   int index = 0;
 	   while(index<array.length &&array[index]!=character) {
 		   index++;
@@ -24,7 +24,7 @@ public class ArrayChar {
 	   return index==array.length?-1:index;
    }
    
-   public int myLastIndexOf(char character) {
+   public int lastIndexOf(char character) {
 	   int index = array.length-1 ;
 	   while(index>-1 &&array[index]!=character) {
 		   index--;   
@@ -32,7 +32,7 @@ public class ArrayChar {
 		   return index;
    }
    
-   		public int myCountChar(char character) {
+   		public int countChar(char character) {
    			int occurence = 0;
    			for(int i=0; i<array.length; i++) {
    				if (array[i]==character)occurence++;
@@ -41,7 +41,7 @@ public class ArrayChar {
    				return occurence;
 }
    		
-   		public int myCompareToIgnoreCase(ArrayChar another) { 
+   		public int compareToIgnoreCase(ArrayChar another) { 
    				int length = Math.min(this.array.length, another.array.length);
    					int index=0;
    	   
@@ -51,12 +51,12 @@ public class ArrayChar {
    				return index==length?this.array.length - another.array.length:Character.toLowerCase(this.array[index])-Character.toLowerCase(another.array[index]);
       }
    	  
-   		public boolean myContains(char character) {      	 
+   		public boolean contains(char character) {      	 
    				
-   				return myIndexOf(character)==-1?false:true;
+   				return indexOf(character)==-1?false:true;
         }
    		
-   		public boolean myEquals(ArrayChar another) {      	 
+   		public boolean equals(ArrayChar another) {      	 
 				if(this.array.length==another.array.length) {
 					int index=0;
 					while(index<this.array.length && this.array[index]== another.array[index]) {
@@ -67,7 +67,7 @@ public class ArrayChar {
 				else return false;
     }
    		
-   		public boolean myEqualsIgnoreCase(ArrayChar another) {      	 
+   		public boolean equalsIgnoreCase(ArrayChar another) {      	 
 			if(this.array.length==another.array.length) {
 				int index=0;
 				while(index<this.array.length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {

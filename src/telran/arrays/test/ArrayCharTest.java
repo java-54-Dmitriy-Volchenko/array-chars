@@ -9,51 +9,51 @@ import telran.arrays.ArrayChar;
 class ArrayCharTest {
 
 	@Test
-	void myCompareToTest() {
+	void compareToTest() {
 		char[] ar1 = {'1', '2', '3'};
 		char[] ar2 = {'9'};
 		char[] ar3 = {'1', '2', '3'};
 		ArrayChar arrayChar1 = new ArrayChar(ar1);
 		ArrayChar arrayChar2 = new ArrayChar(ar2);
 		ArrayChar arrayChar3 = new ArrayChar(ar3);
-		assertEquals(8, arrayChar2.myCompareTo(arrayChar1));
-		assertEquals(-8, arrayChar1.myCompareTo(arrayChar2));
+		assertEquals(8, arrayChar2.compareTo(arrayChar1));
+		assertEquals(-8, arrayChar1.compareTo(arrayChar2));
 		assertEquals(1, new ArrayChar(new char[] {'a','a'})
-				.myCompareTo(new ArrayChar(new char[] {'a'})));
+				.compareTo(new ArrayChar(new char[] {'a'})));
 		assertEquals(-1, new ArrayChar(new char[] {'a'})
-				.myCompareTo(new ArrayChar(new char[] {'a', 'a'})));
-		assertEquals(0, arrayChar1.myCompareTo(arrayChar3));
+				.compareTo(new ArrayChar(new char[] {'a', 'a'})));
+		assertEquals(0, arrayChar1.compareTo(arrayChar3));
 	}
 	@Test
-	void myIndexOfTest() {
+	void indexOfTest() {
 		char[] ar1 = {'1', '2', '3', '2'};
 		ArrayChar arrayChar1=new ArrayChar(ar1);
-		assertEquals(1, arrayChar1.myIndexOf('2'));
-		assertEquals (-1, arrayChar1.myIndexOf('9'));
+		assertEquals(1, arrayChar1.indexOf('2'));
+		assertEquals (-1, arrayChar1.indexOf('9'));
 }
 	@Test
-	void myLastIndexOfTest() {
+	void lastIndexOfTest() {
 		char[] ar1 = {'1', '2', '3', '2'};
 		ArrayChar arrayChar1=new ArrayChar(ar1);
-		assertEquals(3, arrayChar1.myLastIndexOf('2'));
-		assertEquals (-1, arrayChar1.myLastIndexOf('9'));
+		assertEquals(3, arrayChar1.lastIndexOf('2'));
+		assertEquals (-1, arrayChar1.lastIndexOf('9'));
 }
 	@Test
-	void myCountCharTest() {
+	void countCharTest() {
 		char[] ar1 = {'1', '2', '3', '2'};
 		char[] ar2 = {'a', '3', '@', '.', ' ', 'k',' ', ' ', 'ך'};
 		ArrayChar arrayChar1=new ArrayChar(ar1);
 		ArrayChar arrayChar2=new ArrayChar(ar2);
-		assertEquals(2, arrayChar1.myCountChar('2'));
-		assertEquals(0, arrayChar1.myCountChar('a'));
-		assertEquals(3, arrayChar2.myCountChar(' '));
+		assertEquals(2, arrayChar1.countChar('2'));
+		assertEquals(0, arrayChar1.countChar('a'));
+		assertEquals(3, arrayChar2.countChar(' '));
 		
 		
 	}
 	
 	
 	@Test
-	void myCompareToIgnoreCaseTest() {
+	void compareToIgnoreCaseTest() {
 		char[] ar1 = {'1', '2', '3'};
 		char[] ar2 = {'9'};
 		char[] ar3 = {'1', '2', '3'};
@@ -73,25 +73,25 @@ class ArrayCharTest {
 		ArrayChar arrayChar7 = new ArrayChar(ar7);
 		ArrayChar arrayChar8 = new ArrayChar(ar8);
 		ArrayChar arrayChar9 = new ArrayChar(ar9);
-		assertEquals(8, arrayChar2.myCompareToIgnoreCase(arrayChar1));
-		assertEquals(-8, arrayChar1.myCompareToIgnoreCase(arrayChar2));
-		assertEquals(1, arrayChar7.myCompareToIgnoreCase(arrayChar6));
-		assertEquals(-1, arrayChar6.myCompareToIgnoreCase(arrayChar7));
-		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
-		assertEquals(0, arrayChar1.myCompareToIgnoreCase(arrayChar3));
-		assertTrue (arrayChar4.myCompareToIgnoreCase(arrayChar5)==0);
-		assertTrue(arrayChar8.myCompareToIgnoreCase(arrayChar9) > 0); 
+		assertEquals(8, arrayChar2.compareToIgnoreCase(arrayChar1));
+		assertEquals(-8, arrayChar1.compareToIgnoreCase(arrayChar2));
+		assertEquals(1, arrayChar7.compareToIgnoreCase(arrayChar6));
+		assertEquals(-1, arrayChar6.compareToIgnoreCase(arrayChar7));
+		assertEquals(0, arrayChar1.compareToIgnoreCase(arrayChar3));
+		assertEquals(0, arrayChar1.compareToIgnoreCase(arrayChar3));
+		assertTrue (arrayChar4.compareToIgnoreCase(arrayChar5)==0);
+		assertTrue(arrayChar8.compareToIgnoreCase(arrayChar9) > 0); 
 	}
 	
 	@Test
-	void myContainsTest() {
+	void containsTest() {
 		char[] ar1 = {'a', '3', '@', '.', ' ', 'k',' ', ' ', 'ך'};
 		ArrayChar arrayChar1 = new ArrayChar(ar1);
-		assertTrue (arrayChar1.myContains('@'));
-		assertFalse (arrayChar1.myContains('>'));
+		assertTrue (arrayChar1.contains('@'));
+		assertFalse (arrayChar1.contains('>'));
 	}
 	@Test
-	void myEqualsTest() {
+	void equalsTest() {
 		char[] ar1 = {'a', '3', '@', '.'};
 		char[] ar2 = {'a', '3', '@'};
 		char[] ar3 = {'a', '3', '@', '.', ' '};
@@ -103,13 +103,13 @@ class ArrayCharTest {
 		ArrayChar arrayChar3=new ArrayChar(ar3);
 		ArrayChar arrayChar4=new ArrayChar(ar4);
 		ArrayChar arrayChar5=new ArrayChar(ar5);
-		assertTrue (arrayChar1.myEquals(arrayChar5));
-		assertFalse(arrayChar1.myEquals(arrayChar2));
-		assertFalse(arrayChar1.myEquals(arrayChar3));
-		assertFalse(arrayChar1.myEquals(arrayChar4));
+		assertTrue (arrayChar1.equals(arrayChar5));
+		assertFalse(arrayChar1.equals(arrayChar2));
+		assertFalse(arrayChar1.equals(arrayChar3));
+		assertFalse(arrayChar1.equals(arrayChar4));
 	}
 	@Test
-	void myEqualsIgnoreCaseTest() {
+	void equalsIgnoreCaseTest() {
 		char[] ar1 = {'a', '3', '@', '.'};
 		char[] ar2 = {'a', '3', '@'};
 		char[] ar3 = {'a', '3', '@', '.', ' '};
@@ -121,10 +121,10 @@ class ArrayCharTest {
 		ArrayChar arrayChar3=new ArrayChar(ar3);
 		ArrayChar arrayChar4=new ArrayChar(ar4);
 		ArrayChar arrayChar5=new ArrayChar(ar5);
-		assertTrue (arrayChar1.myEqualsIgnoreCase(arrayChar5));
-		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar2));
-		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar3));
-		assertFalse(arrayChar1.myEqualsIgnoreCase(arrayChar4));
+		assertTrue (arrayChar1.equalsIgnoreCase(arrayChar5));
+		assertFalse(arrayChar1.equalsIgnoreCase(arrayChar2));
+		assertFalse(arrayChar1.equalsIgnoreCase(arrayChar3));
+		assertFalse(arrayChar1.equalsIgnoreCase(arrayChar4));
 	}
 //	//The last task to find the bug in code and show this in unit test - i think it is possibility to 
 	//add to instance of class object null value. This possibility is because of no setters and getters in 
