@@ -56,16 +56,13 @@ public class ArrayChar {
    				return indexOf(character)==-1?false:true;
         }
    		
-   		public boolean equals(ArrayChar another) {      	 
-				if(this.array.length==another.array.length) {
+   		public boolean equals(ArrayChar another) {   			
 					int index=0;
-					while(index<this.array.length && this.array[index]== another.array[index]) {
-						index++;
-					}
+					while(this.array.length==another.array.length && index<array.length && this.array[index]== another.array[index]) {
+						index++;}									
 					return index==this.array.length?true:false;
-				}
-				else return false;
-    }
+   		}
+    
    		
    		public boolean equalsIgnoreCase(ArrayChar another) {      	 
 			if(this.array.length==another.array.length) {
