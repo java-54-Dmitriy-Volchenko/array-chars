@@ -62,19 +62,24 @@ public class ArrayChar {
 						index++;}									
 					return index==this.array.length?true:false;
    		}
+   		
+   		public boolean equals1(ArrayChar another) {   			
+											
+			return compareTo(another)==0;
+	}
     
    		
    		public boolean equalsIgnoreCase(ArrayChar another) {      	 
-			if(this.array.length==another.array.length) {
+			
 				int index=0;
-				while(index<this.array.length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
+				while(this.array.length==another.array.length && index<this.array.length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
 					index++;
 				}
 				return index==this.array.length?true:false;
 			}
-			else return false;
+			
 }
 
    		
-}
+
 
