@@ -6,7 +6,12 @@ public class ArrayChar {
    
    public ArrayChar(char[] array) {
 	  super();
-	  this.array = array;
+	//  this.array = array;//source of big critical BUG
+	  this.array = new char[array.length];
+	  for (int i = 0; i<array.length; i++) {
+		  this.array[i]=array[i];
+	  }
+	  
    }
    public int compareTo(ArrayChar another) {//I changed names of method(s) to avoid matching with native methods of class String 
 	   int length = Math.min(this.array.length, another.array.length);
@@ -53,7 +58,7 @@ public class ArrayChar {
    	  
    		public boolean contains(char character) {      	 
    				
-   				return indexOf(character)==-1?false:true;
+   				return indexOf(character)>-1;
         }
    		
    		public boolean equals(ArrayChar another) {   			
@@ -65,7 +70,7 @@ public class ArrayChar {
    		
    		public boolean equals1(ArrayChar another) {   			
 											
-			return compareTo(another)==0;
+			return another!=null && compareTo(another)==0; //avoiding null pointer exception
 	}
     
    		
