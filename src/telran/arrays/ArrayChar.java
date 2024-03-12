@@ -13,7 +13,7 @@ public class ArrayChar {
 	  }
 	  
    }
-   public int compareTo(ArrayChar another) {//I changed names of method(s) to avoid matching with native methods of class String 
+   public int compareTo(ArrayChar another) {
 	   int length = Math.min(this.array.length, another.array.length);
 	   int index=0;
 	  while(index<length &&this.array[index]==another.array[index]) {
@@ -46,32 +46,39 @@ public class ArrayChar {
    				return occurence;
 }
    		
-   		public int compareToIgnoreCase(ArrayChar another) { 
-   				int length = Math.min(this.array.length, another.array.length);
-   					int index=0;
-   	   
-   						while(index<length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
-   						index++;
-   	  }
-   				return index==length?this.array.length - another.array.length:Character.toLowerCase(this.array[index])-Character.toLowerCase(another.array[index]);
-      }
-   	  
+   		public int compareToIgnoreCase(ArrayChar another) {
+   		 return compareCommon(another, true);
+   	}
+      
+   		private int compareCommon(ArrayChar another, boolean isIgnoreCase) {
+   			int length = Math.min(array.length, another.array.length);
+   			int index = 0;
+   			int diff = 0;
+   			while(index < length && (diff = getDiff(another, index, isIgnoreCase)) == 0) {
+		   index++;
+	   }
+   			return index == length ? this.array.length - another.array.length : 
+		   diff;
+}
+   		private int getDiff(ArrayChar another, int index, boolean isIgnoreCase) {
+   			char first = array[index];
+   			char second = another.array[index];
+   			if (isIgnoreCase) {
+   				first = Character.toLowerCase(first);
+   				second = Character.toLowerCase(second);
+   			}
+   			return first - second;
+}
    		public boolean contains(char character) {      	 
    				
    				return indexOf(character)>-1;
         }
    		
    		public boolean equals(ArrayChar another) {   			
-					int index=0;
-					while(this.array.length==another.array.length && index<array.length && this.array[index]== another.array[index]) {
-						index++;}									
-					return index==this.array.length?true:false;
+   			return another != null && compareTo(another) == 0;
    		}
    		
-   		public boolean equals1(ArrayChar another) {   			
-											
-			return another!=null && compareTo(another)==0; //avoiding null pointer exception
-	}
+   		
     
    		
    		public boolean equalsIgnoreCase(ArrayChar another) {      	 
@@ -80,10 +87,13 @@ public class ArrayChar {
 				while(this.array.length==another.array.length && index<this.array.length && Character.toLowerCase(this.array[index])== Character.toLowerCase(another.array[index])) {
 					index++;
 				}
-				return index==this.array.length?true:false;
-			}
+				return another != null && compareToIgnoreCase(another) == 0;
+   		}
+
+   		
+	}
 			
-}
+
 
    		
 
